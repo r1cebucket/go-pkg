@@ -2,7 +2,7 @@ package config
 
 import (
 	"encoding/json"
-	"gopkg/pkg/log"
+	"github.com/r1cebucket/gopkg/pkg/log"
 	"io"
 	"os"
 )

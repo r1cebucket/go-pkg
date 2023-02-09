@@ -2,7 +2,7 @@ package config
 
 import (
 	"encoding/json"
-	"go_pkg/pkg/log"
+	"gopkg/pkg/log"
 	"io"
 	"os"
 )

@@ -1,4 +1,4 @@
-module go_pkg
+module gopkg
 
 go 1.18
 

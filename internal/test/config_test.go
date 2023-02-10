@@ -3,7 +3,7 @@ package test_test
 import (
 	"testing"
 
-	"github.com/r1cebucket/gopkg/pkg/config"
+	"github.com/r1cebucket/gopkg/config"
 )
 
 func TestParse(t *testing.T) {

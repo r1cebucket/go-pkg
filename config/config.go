@@ -2,11 +2,12 @@ package config
 
 import (
 	"encoding/json"
+	"errors"
 	"io"
 	"os"
 	"strings"
 
-	"github.com/r1cebucket/gopkg/pkg/log"
+	"github.com/r1cebucket/gopkg/log"
 )
 
 type configure struct {
@@ -50,10 +51,14 @@ type email struct {
 
 // TODO add new conf struct here
 
-func Parse(confPath string) {
+func Parse(confPath string) error {
 	if strings.HasSuffix(confPath, ".json") {
-		log.Info().Msg("use json config")
 		ParseJson(confPath)
+		return nil
+	} else if strings.HasSuffix(confPath, ".toml") {
+		return nil
+	} else {
+		return errors.New("config type not supported: " + confPath)
 	}
 }
 

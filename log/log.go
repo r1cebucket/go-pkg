@@ -13,7 +13,7 @@ import (
 // archive the log file after a certain amount of data
 var writer *jack.Logger
 
-// Setup config
+// Setup config with level
 func Setup(level string) {
 	writer = &jack.Logger{
 		Filename:   "log.txt",

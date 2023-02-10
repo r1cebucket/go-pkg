@@ -2,7 +2,7 @@
 
 ### Goal
 
-This project is used for killing `/pkg` in my Go projects.
+This project is used for killing `/pkg` in my personal Go projects.
 
 ### Pkg List
 

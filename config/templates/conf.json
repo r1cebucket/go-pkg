@@ -4,15 +4,15 @@
     },
     "database":{
         "type": "postgres",
-        "host": "172.17.0.3",
+        "host": "",
         "port": "5432",
         "user": "postgres",
-        "password": "ricebucket", 
-        "dbname": "file_server"
+        "password": "", 
+        "dbname": ""
     },
     "redis":{
-        "host": "172.17.0.4",
+        "host": "",
         "port": "6379",
-        "password": "ricebucket"
+        "password": ""
     }
 }

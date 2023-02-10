@@ -3,7 +3,9 @@ module github.com/r1cebucket/gopkg
 go 1.18
 
 require (
+	github.com/bmizerany/pq v0.0.0-20131128184720-da2b95e392c1
 	github.com/go-gomail/gomail v0.0.0-20160411212932-81ebce5c23df
+	github.com/gomodule/redigo v1.8.9
 	github.com/rs/zerolog v1.29.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 )

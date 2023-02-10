@@ -10,3 +10,6 @@ config
 log  
 email  
 
+### Not Ready
+
+redis

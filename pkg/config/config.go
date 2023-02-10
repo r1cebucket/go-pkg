@@ -2,9 +2,11 @@ package config
 
 import (
 	"encoding/json"
-	"github.com/r1cebucket/gopkg/pkg/log"
 	"io"
 	"os"
+	"strings"
+
+	"github.com/r1cebucket/gopkg/pkg/log"
 )
 
 type configure struct {
@@ -47,6 +49,13 @@ type email struct {
 }
 
 // TODO add new conf struct here
+
+func Parse(confPath string) {
+	if strings.HasSuffix(confPath, ".json") {
+		log.Info().Msg("use json config")
+		ParseJson(confPath)
+	}
+}
 
 func ParseJson(confPath string) {
 	// open and read config file

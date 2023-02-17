@@ -53,6 +53,7 @@ type email struct {
 
 type httpServer struct {
 	Addr string `json:"addr"`
+	Mode string `json:"mode"`
 }
 
 // TODO add new conf struct here

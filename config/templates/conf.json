@@ -14,5 +14,9 @@
         "host": "",
         "port": "6379",
         "password": ""
+    },
+    "http":{
+        "addr": ":8080",
+        "mode": "debug"
     }
 }

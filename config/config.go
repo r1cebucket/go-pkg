@@ -11,10 +11,11 @@ import (
 )
 
 type configure struct {
-	Logger   logger   `json:"logger"`
-	Database database `json:"database"`
-	Redis    redis    `json:"redis"`
-	Email    email    `json:"email"`
+	Logger     logger     `json:"logger"`
+	Database   database   `json:"database"`
+	Redis      redis      `json:"redis"`
+	Email      email      `json:"email"`
+	HTTPServer httpServer `json:http`
 	// TODO add new conf here
 }
 
@@ -25,6 +26,7 @@ var Logger *logger
 var Database *database
 var Redis *redis
 var Email *email
+var HTTPServer *httpServer
 
 // TODO add new conf var here
 
@@ -47,6 +49,10 @@ type redis struct {
 }
 
 type email struct {
+}
+
+type httpServer struct {
+	Addr string `json:"addr"`
 }
 
 // TODO add new conf struct here
@@ -84,6 +90,7 @@ func ParseJson(confPath string) {
 	Database = &conf.Database
 	Logger = &conf.Logger
 	Redis = &conf.Redis
+	HTTPServer = &conf.HTTPServer
 
 	// TODO add new conf here
 }

@@ -65,8 +65,8 @@ func TestHSet(t *testing.T) {
 	var key, field string
 	var err error
 
-	key = "test:str"
-	key = "test_field"
+	key = "test:hash"
+	field = "test_field"
 	valTrue := "test_val"
 	err = redis.HSet(redisConn, key, field, valTrue)
 	if err != nil {
@@ -90,7 +90,7 @@ func TestHGet(t *testing.T) {
 	var key, field, val string
 	var err error
 
-	key = "test:keyname"
+	key = "test:hash"
 	field = "test_field"
 	strTrue := "test_val"
 	val, err = redis.HGet(redisConn, key, field)
@@ -153,6 +153,10 @@ func TestExist(t *testing.T) {
 	var exists bool
 
 	key = "test:exists"
+	err = redis.Set(redisConn, key, "exist")
+	if err != nil {
+		t.Error()
+	}
 	exists, err = redis.Exists(redisConn, key)
 	if err != nil {
 		log.Err(err).Msg("Faile to get result")

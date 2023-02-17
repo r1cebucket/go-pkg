@@ -15,7 +15,7 @@ type configure struct {
 	Database   database   `json:"database"`
 	Redis      redis      `json:"redis"`
 	Email      email      `json:"email"`
-	HTTPServer httpServer `json:http`
+	HTTPServer httpServer `json:"http"`
 	// TODO add new conf here
 }
 

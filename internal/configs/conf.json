@@ -4,15 +4,22 @@
     },
     "database":{
         "type": "postgres",
-        "host": "127.0.0.1",
+        "host": "",
         "port": "5432",
         "user": "postgres",
         "password": "ricebucket", 
         "dbname": "test"
     },
     "redis":{
-        "host": "127.0.0.1",
+        "host": "",
         "port": "6379",
-        "password": "ricebucket"
+        "password": ""
+    },
+    "http":{
+        "addr": ":8080",
+        "mode": "debug"
+    },
+    "kafka":{
+        "servers":["localhost:9092"]
     }
 }

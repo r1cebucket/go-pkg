@@ -1,5 +1,4 @@
-{"level":"error","error":"WRONGTYPE Operation against a key holding the wrong kind of value","time":"2023-02-17T11:28:13+08:00","message":"Faile to get hashmap"}
-{"level":"error","error":"WRONGTYPE Operation against a key holding the wrong kind of value","time":"2023-02-17T11:29:19+08:00","message":"Faile to set hashmap"}
-{"level":"error","error":"WRONGTYPE Operation against a key holding the wrong kind of value","time":"2023-02-17T11:29:19+08:00","message":"Faile to get hashmap"}
-{"level":"error","error":"WRONGTYPE Operation against a key holding the wrong kind of value","time":"2023-02-17T11:29:29+08:00","message":"Faile to set hashmap"}
-{"level":"error","error":"WRONGTYPE Operation against a key holding the wrong kind of value","time":"2023-02-17T11:29:29+08:00","message":"Faile to get hashmap"}
+{"level":"error","error":"[38] Invalid Replication Factor: the replication-factor is invalid","time":"2023-02-21T16:15:45+08:00","message":"failed to dial leader"}
+{"level":"error","error":"[38] Invalid Replication Factor: the replication-factor is invalid","time":"2023-02-21T16:18:12+08:00","message":"failed to dial leader"}
+{"level":"error","error":"Broker: Invalid replication factor","time":"2023-02-21T17:22:25+08:00","message":"Delivery failed: test[-1]@unset(Broker: Invalid replication factor)\n"}
+{"level":"error","error":"Broker: Invalid replication factor","time":"2023-02-21T17:27:57+08:00","message":"Delivery failed: test[-1]@unset(Broker: Invalid replication factor)\n"}

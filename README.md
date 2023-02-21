@@ -8,8 +8,9 @@ This project is used for killing `/pkg` in my personal Go projects.
 
 config  
 log  
-email  
+redis
 
 ### Not Ready
 
-redis
+email
+kafka  

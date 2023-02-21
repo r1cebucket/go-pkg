@@ -10,26 +10,6 @@ import (
 	"github.com/r1cebucket/gopkg/log"
 )
 
-type configure struct {
-	Logger     logger     `json:"logger"`
-	Database   database   `json:"database"`
-	Redis      redis      `json:"redis"`
-	Email      email      `json:"email"`
-	HTTPServer httpServer `json:"http"`
-	// TODO add new conf here
-}
-
-var conf configure
-
-// user pointer to save space
-var Logger *logger
-var Database *database
-var Redis *redis
-var Email *email
-var HTTPServer *httpServer
-
-// TODO add new conf var here
-
 type logger struct {
 	Level string `json:"level"`
 }
@@ -56,7 +36,33 @@ type httpServer struct {
 	Mode string `json:"mode"`
 }
 
+type kafka struct {
+	Servers []string `json:"servers"`
+}
+
 // TODO add new conf struct here
+
+type configure struct {
+	Logger     logger     `json:"logger"`
+	Database   database   `json:"database"`
+	Redis      redis      `json:"redis"`
+	Email      email      `json:"email"`
+	HTTPServer httpServer `json:"http"`
+	Kafka      kafka      `json:"kafka"`
+	// TODO add new conf here
+}
+
+var conf configure
+
+// user pointer to save space
+var Logger *logger
+var Database *database
+var Redis *redis
+var Email *email
+var HTTPServer *httpServer
+var Kafka *kafka
+
+// TODO add new conf var here
 
 func Parse(confPath string) error {
 	if strings.HasSuffix(confPath, ".json") {
@@ -92,6 +98,7 @@ func ParseJson(confPath string) {
 	Logger = &conf.Logger
 	Redis = &conf.Redis
 	HTTPServer = &conf.HTTPServer
+	Kafka = &conf.Kafka
 
 	// TODO add new conf here
 }

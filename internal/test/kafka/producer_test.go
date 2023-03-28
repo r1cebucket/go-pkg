@@ -1,4 +1,4 @@
-package pkg_test
+package kafka
 
 import (
 	"testing"
@@ -14,7 +14,7 @@ func TestProducer(t *testing.T) {
 		return
 	}
 
-	err := kafka.Produce(p, "test", []byte("hello"))
+	err := kafka.Produce(p, "test", kafka.PartitionAny, []byte("hello0"))
 	if err != nil {
 		log.Err(err).Msg("Faile to produce message")
 		t.Error()

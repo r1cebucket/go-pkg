@@ -11,6 +11,8 @@ import (
 
 // ref: https://github.com/confluentinc/confluent-kafka-go/blob/master/examples/producer_example/producer_example.go
 
+const PartitionAny int32 = kafka.PartitionAny
+
 func NewProducer() *kafka.Producer {
 	p, err := kafka.NewProducer(
 		&kafka.ConfigMap{
@@ -43,15 +45,20 @@ func NewProducer() *kafka.Producer {
 	return p
 }
 
-func Produce(p *kafka.Producer, topic string, content []byte) error {
+func Produce(p *kafka.Producer, topic string, partition int32, content []byte) error {
 	err := p.Produce(&kafka.Message{
 		TopicPartition: kafka.TopicPartition{
-			Topic:     &topic,
-			Partition: kafka.PartitionAny,
+			Topic: &topic,
+			// Partition: kafka.PartitionAny,
+			Partition: partition,
 		},
 		Value: content,
 	}, nil)
 
 	p.Flush(15 * 1000)
 	return err
+}
+
+func TransProduce(p *kafka.Producer, topic string, partition int32, content []byte) error {
+	return nil
 }

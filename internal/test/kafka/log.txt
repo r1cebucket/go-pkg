@@ -1,0 +1,36 @@
+{"level":"info","time":"2023-03-27T11:25:39+08:00","message":"Delivered message to test[0]@2\n"}
+{"level":"info","time":"2023-03-27T11:25:39+08:00","message":"% Message on test[0]@2:\ntest_consumer\n"}
+{"level":"info","time":"2023-03-27T11:27:38+08:00","message":"Delivered message to test[0]@3\n"}
+{"level":"info","time":"2023-03-27T11:27:38+08:00","message":"% Message on test[0]@3:\ntest_consumer\n"}
+{"level":"info","time":"2023-03-27T11:27:42+08:00","message":"Ignored OffsetsCommitted (<nil>, [test[0]@4])\n"}
+{"level":"info","time":"2023-03-27T11:30:05+08:00","message":"Delivered message to test[0]@4\n"}
+{"level":"info","time":"2023-03-27T11:30:05+08:00","message":"% Message on test[0]@4:\ntest_consumer\n"}
+{"level":"info","time":"2023-03-27T11:32:05+08:00","message":"Delivered message to test[0]@5\n"}
+{"level":"info","time":"2023-03-27T11:32:05+08:00","message":"% Message on test[0]@5:\nhello0\n"}
+{"level":"info","time":"2023-03-27T11:32:08+08:00","message":"Ignored OffsetsCommitted (<nil>, [test[0]@6])\n"}
+{"level":"info","time":"2023-03-27T11:32:12+08:00","message":"Delivered message to test[0]@6\n"}
+{"level":"info","time":"2023-03-27T11:32:12+08:00","message":"% Message on test[0]@6:\nhello0\n"}
+{"level":"info","time":"2023-03-27T11:32:13+08:00","message":"Ignored OffsetsCommitted (<nil>, [test[0]@7])\n"}
+{"level":"info","time":"2023-03-27T11:32:15+08:00","message":"Delivered message to test[0]@7\n"}
+{"level":"info","time":"2023-03-27T11:32:15+08:00","message":"% Message on test[0]@7:\nhello0\n"}
+{"level":"info","time":"2023-03-27T11:32:18+08:00","message":"Ignored OffsetsCommitted (<nil>, [test[0]@8])\n"}
+{"level":"info","time":"2023-03-27T11:32:27+08:00","message":"Delivered message to test[0]@8\n"}
+{"level":"info","time":"2023-03-27T11:32:28+08:00","message":"Delivered message to test[0]@9\n"}
+{"level":"info","time":"2023-03-27T11:32:35+08:00","message":"Delivered message to test[0]@10\n"}
+{"level":"info","time":"2023-03-27T11:32:40+08:00","message":"Delivered message to test[0]@11\n"}
+{"level":"info","time":"2023-03-27T11:32:48+08:00","message":"% Message on test[0]@8:\nhello0\n"}
+{"level":"info","time":"2023-03-27T11:32:48+08:00","message":"% Message on test[0]@9:\nhello0\n"}
+{"level":"info","time":"2023-03-27T11:32:48+08:00","message":"% Message on test[0]@10:\nhello0\n"}
+{"level":"info","time":"2023-03-27T11:32:48+08:00","message":"% Message on test[0]@11:\nhello0\n"}
+{"level":"info","time":"2023-03-27T11:32:53+08:00","message":"Ignored OffsetsCommitted (<nil>, [test[0]@12])\n"}
+{"level":"info","time":"2023-03-27T13:57:26+08:00","message":"Delivered message to test[0]@12\n"}
+{"level":"info","time":"2023-03-27T13:58:46+08:00","message":"Delivered message to test[0]@13\n"}
+{"level":"info","time":"2023-03-27T13:58:48+08:00","message":"Delivered message to test[0]@14\n"}
+{"level":"info","time":"2023-03-27T14:01:33+08:00","message":"% Message on test[0]@12:\nhello0\n"}
+{"level":"info","time":"2023-03-27T14:05:10+08:00","message":"% Message on test[0]@12:\nhello0\n"}
+{"level":"info","time":"2023-03-27T14:05:10+08:00","message":"hello0"}
+{"level":"info","time":"2023-03-27T14:05:10+08:00","message":"% Message on test[0]@13:\nhello0\n"}
+{"level":"info","time":"2023-03-27T14:05:10+08:00","message":"hello0"}
+{"level":"info","time":"2023-03-27T14:05:10+08:00","message":"% Message on test[0]@14:\nhello0\n"}
+{"level":"info","time":"2023-03-27T14:05:10+08:00","message":"hello0"}
+{"level":"info","time":"2023-03-27T14:05:15+08:00","message":"Ignored OffsetsCommitted (<nil>, [test[0]@15])\n"}

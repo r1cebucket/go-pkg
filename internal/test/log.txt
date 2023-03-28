@@ -1,4 +1,0 @@
-{"level":"error","error":"[38] Invalid Replication Factor: the replication-factor is invalid","time":"2023-02-21T16:15:45+08:00","message":"failed to dial leader"}
-{"level":"error","error":"[38] Invalid Replication Factor: the replication-factor is invalid","time":"2023-02-21T16:18:12+08:00","message":"failed to dial leader"}
-{"level":"error","error":"Broker: Invalid replication factor","time":"2023-02-21T17:22:25+08:00","message":"Delivery failed: test[-1]@unset(Broker: Invalid replication factor)\n"}
-{"level":"error","error":"Broker: Invalid replication factor","time":"2023-02-21T17:27:57+08:00","message":"Delivery failed: test[-1]@unset(Broker: Invalid replication factor)\n"}

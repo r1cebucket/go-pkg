@@ -1,6 +1,7 @@
 package kafka
 
 import (
+	"context"
 	"fmt"
 	"strings"
 
@@ -54,11 +55,27 @@ func Produce(p *kafka.Producer, topic string, partition int32, content []byte) e
 		},
 		Value: content,
 	}, nil)
-
-	p.Flush(15 * 1000)
 	return err
 }
 
-func TransProduce(p *kafka.Producer, topic string, partition int32, content []byte) error {
+func Flush(p *kafka.Producer) {
+	unflushed := p.Len()
+	for unflushed > 0 {
+		unflushed = p.Flush(15 * 1000)
+	}
+}
+
+func TransFlush(ctx context.Context, p *kafka.Producer, topic string, partition int32, content []byte) error {
+	err := p.InitTransactions(ctx)
+	if err != nil {
+		return err
+	}
+	err = p.BeginTransaction()
+	if err != nil {
+		p.AbortTransaction(ctx)
+		return err
+	}
+	/*unflushed := */ p.Flush(15 * 1000) // TODO
+	p.CommitTransaction(ctx)
 	return nil
 }

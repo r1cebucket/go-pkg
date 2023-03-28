@@ -68,6 +68,7 @@ func Consume(c *kafka.Consumer, handlers map[string]func([]byte) error) {
 				err := handlers[*e.TopicPartition.Topic](e.Value)
 				if err != nil {
 					log.Err(err)
+					continue
 				}
 				if e.Headers != nil {
 					log.Info().Msg(fmt.Sprintf("%% Headers: %v\n", e.Headers))
@@ -80,7 +81,7 @@ func Consume(c *kafka.Consumer, handlers map[string]func([]byte) error) {
 				// if enable.auto.commit isn't set to false (the default is true).
 				// By storing the offsets manually after completely processing
 				// each message, we can ensure atleast once processing.
-				_, err = c.StoreMessage(e)
+				_, err = c.StoreMessage(e) // commit offset
 				if err != nil {
 					log.Err(err).Msg(fmt.Sprintf("%% Error storing offset after message %s:\n", e.TopicPartition))
 				}

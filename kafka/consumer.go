@@ -40,10 +40,6 @@ func NewConsumer(group string, topics []string) *kafka.Consumer {
 	return c
 }
 
-type Handler interface {
-	Handle([]byte) error
-}
-
 func Consume(c *kafka.Consumer, handlers map[string]func([]byte) error) {
 	// A signal handler or similar could be used to set this to false to break the loop.
 	defer c.Close()

@@ -7,6 +7,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/koding/multiconfig"
 	"github.com/r1cebucket/gopkg/log"
 )
 
@@ -66,16 +67,17 @@ var Kafka *kafka
 
 func Parse(confPath string) error {
 	if strings.HasSuffix(confPath, ".json") {
-		ParseJson(confPath)
+		parseJson(confPath)
 		return nil
 	} else if strings.HasSuffix(confPath, ".toml") {
+		parseToml(confPath)
 		return nil
 	} else {
 		return errors.New("config type not supported: " + confPath)
 	}
 }
 
-func ParseJson(confPath string) {
+func parseJson(confPath string) {
 	// open and read config file
 	confFile, err := os.Open(confPath)
 	if err != nil {
@@ -94,6 +96,21 @@ func ParseJson(confPath string) {
 		return
 	}
 
+	register()
+}
+
+func parseToml(confPath string) {
+	m := multiconfig.NewWithPath(confPath)
+	err := m.Load(&conf)
+	if err != nil {
+		log.Fatal().Msg("Faile ot " + err.Error())
+		return
+	}
+
+	register()
+}
+
+func register() {
 	Database = &conf.Database
 	Logger = &conf.Logger
 	Redis = &conf.Redis

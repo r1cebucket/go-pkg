@@ -34,3 +34,5 @@
 {"level":"info","time":"2023-03-27T14:05:10+08:00","message":"% Message on test[0]@14:\nhello0\n"}
 {"level":"info","time":"2023-03-27T14:05:10+08:00","message":"hello0"}
 {"level":"info","time":"2023-03-27T14:05:15+08:00","message":"Ignored OffsetsCommitted (<nil>, [test[0]@15])\n"}
+{"level":"error","error":"localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)","time":"2023-03-30T14:33:41+08:00","message":"Kafka error"}
+{"level":"error","error":"1/1 brokers are down","time":"2023-03-30T14:33:41+08:00","message":"Kafka error"}

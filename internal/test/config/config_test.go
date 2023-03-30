@@ -1,4 +1,4 @@
-package pkg_test
+package config_test
 
 import (
 	"testing"
@@ -13,12 +13,18 @@ func init() {
 
 func TestParse(t *testing.T) {
 	var err error
-	err = config.Parse("../configs/conf.json")
+	err = config.Parse("../../configs/conf.json")
 	if err != nil {
 		log.Err(err)
 		t.Error()
 	}
-	err = config.Parse("../configs/conf.somethingelse")
+	// err = config.Parse("../../configs/conf.toml")
+	// if err != nil {
+	// 	log.Err(err)
+	// 	t.Error()
+	// }
+	// log.Info().
+	err = config.Parse("../../configs/conf.somethingelse")
 	log.Info().Msg(err.Error())
 	if err == nil {
 		t.Error()

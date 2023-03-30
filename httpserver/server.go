@@ -35,8 +35,11 @@ func (svr *httpServer) Start() error {
 }
 
 func NewHandler() http.Handler {
-	gin.SetMode(gin.DebugMode)
-	// gin.SetMode(gin.ReleaseMode)
+	if config.HTTPServer.Mode == "debug" {
+		gin.SetMode(gin.DebugMode)
+	} else {
+		gin.SetMode(gin.ReleaseMode)
+	}
 	w := log.GetWriter()
 	if w != nil {
 		gin.DefaultErrorWriter = w

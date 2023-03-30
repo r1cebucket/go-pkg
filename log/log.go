@@ -25,7 +25,7 @@ func Setup(level string) {
 	}
 	log.Logger = log.Output(writer)
 	// set timezone
-	loc, _ := time.LoadLocation("Asia/Chongqing")
+	loc, _ := time.LoadLocation("Asia/Shanghai")
 	zerolog.TimestampFunc = func() time.Time {
 		return time.Now().In(loc)
 	}

@@ -3,12 +3,13 @@
         "level": "debug"
     },
     "database":{
-        "type": "postgres",
-        "host": "",
+        "driver": "postgres",
+        "host": "localhost",
         "port": "5432",
         "user": "postgres",
         "password": "ricebucket", 
-        "dbname": "test"
+        "dbname": "test",
+        "timezone": "Asia/Shanghai"
     },
     "redis":{
         "host": "",

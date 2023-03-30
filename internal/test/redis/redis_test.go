@@ -12,7 +12,7 @@ import (
 
 func init() {
 	log.Setup("debug")
-	config.Parse("../configs/conf.json")
+	config.Parse("../../configs/conf.json")
 	redis.SetUp()
 }
 

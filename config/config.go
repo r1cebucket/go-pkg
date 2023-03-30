@@ -15,12 +15,13 @@ type logger struct {
 	Level string `json:"level" toml:"level"`
 }
 type database struct {
-	Type     string `json:"type" toml:"type"`
+	Driver   string `json:"driver" toml:"driver"`
 	Host     string `json:"host" toml:"host"`
 	Port     string `json:"port" toml:"port"`
 	User     string `json:"user" toml:"user"`
 	Password string `json:"password" toml:"password"`
 	DBName   string `json:"dbname" toml:"dbname"`
+	TimeZone string `json:"timezone" toml:"timezone"`
 }
 
 type redis struct {

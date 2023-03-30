@@ -10,25 +10,29 @@ import (
 )
 
 // manage connection object
-var db *sql.DB
+var sqlDB *sql.DB
 
 func DBConn() *sql.DB {
-	return db
+	if db != nil {
+		sqlDB, _ = db.DB()
+	}
+	return sqlDB
 }
 
+// setup using raw SQL
 func Setup() {
-	driverName := config.Database.Type
+	driverName := config.Database.Driver
 	source := fmt.Sprintf(
-		"host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
-		config.Database.Host, config.Database.Port, config.Database.User, config.Database.Password, config.Database.DBName)
+		"host=%s port=%s user=%s password=%s dbname=%s sslmode=disable TimeZone=%s",
+		config.Database.Host, config.Database.Port, config.Database.User, config.Database.Password, config.Database.DBName, config.Database.TimeZone)
 
 	conn, err := sql.Open(driverName, source)
-	db = conn
-	db.SetMaxOpenConns(1000)
+	sqlDB = conn
+	sqlDB.SetMaxOpenConns(1000)
 	if err != nil {
 		log.Fatal().Msg("Cannot open postgres DB: " + err.Error())
 	}
-	err = db.Ping()
+	err = sqlDB.Ping()
 	if err != nil {
 		log.Fatal().Msg("Cannot connect to postgres DB: " + err.Error())
 	}

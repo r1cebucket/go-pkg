@@ -1,1 +1,8 @@
-{"level":"info","time":"2023-03-30T14:35:35+08:00","message":"config type not supported: ../../configs/conf.somethingelse"}
+{"level":"info","time":"2023-03-30T14:48:42+08:00"}
+{"level":"info","time":"2023-03-30T14:48:42+08:00","message":"config type not supported: ../../configs/conf.somethingelse"}
+{"level":"info","time":"2023-03-30T14:48:57+08:00"}
+{"level":"info","time":"2023-03-30T14:48:57+08:00","message":"config type not supported: ../../configs/conf.somethingelse"}
+{"level":"info","time":"2023-03-30T14:49:27+08:00","message":"debug"}
+{"level":"info","time":"2023-03-30T14:49:27+08:00","message":"config type not supported: ../../configs/conf.somethingelse"}
+{"level":"info","time":"2023-03-30T14:55:46+08:00"}
+{"level":"info","time":"2023-03-30T14:55:46+08:00","message":"config type not supported: ../../configs/conf.somethingelse"}

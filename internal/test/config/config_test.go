@@ -13,17 +13,17 @@ func init() {
 
 func TestParse(t *testing.T) {
 	var err error
-	err = config.Parse("../../configs/conf.json")
-	if err != nil {
-		log.Err(err)
-		t.Error()
-	}
-	// err = config.Parse("../../configs/conf.toml")
+	// err = config.Parse("../../configs/conf.json")
 	// if err != nil {
 	// 	log.Err(err)
 	// 	t.Error()
 	// }
-	// log.Info().
+	err = config.Parse("../../configs/conf.toml")
+	if err != nil {
+		log.Err(err)
+		t.Error()
+	}
+	log.Info().Msg(config.Logger.Level)
 	err = config.Parse("../../configs/conf.somethingelse")
 	log.Info().Msg(err.Error())
 	if err == nil {

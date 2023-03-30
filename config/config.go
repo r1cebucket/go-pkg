@@ -12,50 +12,50 @@ import (
 )
 
 type logger struct {
-	Level string `json:"level"`
+	Level string `json:"level" toml:"level"`
 }
 type database struct {
-	Type     string `json:"type"`
-	Host     string `json:"host"`
-	Port     string `json:"port"`
-	User     string `json:"user"`
-	Password string `json:"password"`
-	DBName   string `json:"dbname"`
+	Type     string `json:"type" toml:"type"`
+	Host     string `json:"host" toml:"host"`
+	Port     string `json:"port" toml:"port"`
+	User     string `json:"user" toml:"user"`
+	Password string `json:"password" toml:"password"`
+	DBName   string `json:"dbname" toml:"dbname"`
 }
 
 type redis struct {
-	Host     string `json:"host"`
-	Port     string `json:"port"`
-	Password string `json:"password"`
+	Host     string `json:"host" toml:"host"`
+	Port     string `json:"port" toml:"port"`
+	Password string `json:"password" toml:"password"`
 }
 
 type email struct {
 }
 
 type httpServer struct {
-	Addr string `json:"addr"`
-	Mode string `json:"mode"`
+	Addr string `json:"addr" toml:"addr"`
+	Mode string `json:"mode" toml:"mode"`
 }
 
 type kafka struct {
-	Servers []string `json:"servers"`
+	Servers []string `json:"servers" toml:"servers"`
 }
 
 // TODO add new conf struct here
 
 type configure struct {
-	Logger     logger     `json:"logger"`
-	Database   database   `json:"database"`
-	Redis      redis      `json:"redis"`
-	Email      email      `json:"email"`
-	HTTPServer httpServer `json:"http"`
-	Kafka      kafka      `json:"kafka"`
+	Logger     logger     `json:"logger" toml:"logger"`
+	Database   database   `json:"database" toml:"database"`
+	Redis      redis      `json:"redis" toml:"redis"`
+	Email      email      `json:"email" toml:"email"`
+	HTTPServer httpServer `json:"http" toml:"http"`
+	Kafka      kafka      `json:"kafka" toml:"kafka"`
 	// TODO add new conf here
 }
 
 var conf configure
 
-// user pointer to save space
+// use pointer to save space
 var Logger *logger
 var Database *database
 var Redis *redis

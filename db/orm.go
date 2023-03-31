@@ -37,5 +37,3 @@ func SetupSession() {
 	// sqlDB.SetMaxOpenConns(100)
 	// sqlDB.SetConnMaxLifetime(time.Hour)
 }
-
-// type sqlLogger

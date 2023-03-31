@@ -1,3 +1,5 @@
+// docs: https://gorm.io/docs/
+// tags: https://gorm.io/zh_CN/docs/models.html#%E5%AD%97%E6%AE%B5%E6%A0%87%E7%AD%BE
 package db
 
 import (
@@ -7,6 +9,7 @@ import (
 	"github.com/r1cebucket/gopkg/log"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 )
 
 var db *gorm.DB
@@ -16,11 +19,11 @@ func Session() *gorm.DB {
 }
 
 // setup engin of gorm
-func SetupEngin() {
+func SetupSession() {
 	dsn := fmt.Sprintf(
 		"host=%s port=%s user=%s password=%s dbname=%s sslmode=disable TimeZone=%s",
 		config.Database.Host, config.Database.Port, config.Database.User, config.Database.Password, config.Database.DBName, config.Database.TimeZone)
-	session, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	session, err := gorm.Open(postgres.Open(dsn), &gorm.Config{Logger: logger.Default.LogMode(logger.Info)})
 	if err != nil {
 		log.Fatal().Msg("Could not open database")
 	}
@@ -34,3 +37,5 @@ func SetupEngin() {
 	// sqlDB.SetMaxOpenConns(100)
 	// sqlDB.SetConnMaxLifetime(time.Hour)
 }
+
+// type sqlLogger

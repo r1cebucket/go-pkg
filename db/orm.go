@@ -15,6 +15,9 @@ import (
 var db *gorm.DB
 
 func Session() *gorm.DB {
+	if db == nil {
+		log.Fatal().Msg("no session found, run db.SetupSession() first")
+	}
 	return db
 }
 

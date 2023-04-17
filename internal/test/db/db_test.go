@@ -28,7 +28,6 @@ func TestQuery(t *testing.T) {
 		t.Error()
 	}
 }
-
 func TestExec(t *testing.T) {
 	var exec string
 	var err error

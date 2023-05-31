@@ -39,10 +39,15 @@ func GetQueryAPI() api.QueryAPI {
 	return queryAPI
 }
 
-func Query(queryAPI api.QueryAPI, query string) (*api.QueryTableResult, error) {
-	results, err := queryAPI.Query(context.Background(), query)
+func Query(queryAPI api.QueryAPI, query string) ([]map[string]interface{}, error) {
+	rows, err := queryAPI.Query(context.Background(), query)
 	if err != nil {
 		return nil, err
+	}
+
+	results := []map[string]interface{}{}
+	for rows.Next() {
+		results = append(results, rows.Record().Values())
 	}
 
 	return results, nil

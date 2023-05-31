@@ -3,6 +3,7 @@ package influxdb_test
 import (
 	"fmt"
 	"testing"
+	"time"
 
 	"github.com/r1cebucket/gopkg/config"
 	"github.com/r1cebucket/gopkg/influxdb"
@@ -31,6 +32,7 @@ func TestWrite(t *testing.T) {
 		if err != nil {
 			t.Errorf("%s\n", err.Error())
 		}
+		time.Sleep(time.Second)
 	}
 
 }
@@ -39,20 +41,13 @@ func TestQuery(t *testing.T) {
 	queryAPI := influxdb.GetQueryAPI()
 
 	r, err := influxdb.Query(queryAPI, `from(bucket: "dev")
-	|> range(start: v.timeRangeStart, stop: v.timeRangeStop)
-	|> filter(fn: (r) => r["_measurement"] == "test_measurement")
-	|> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)
-	|> yield(name: "mean")
-  `)
+	|> range(start: -1d)
+	|> filter(fn: (r) => r["_measurement"] == "project_devices")
+	|> yield()`)
+
 	if err != nil {
-		log.Err(err).Msg("")
 		t.Error()
-		return
 	}
-	for r.Next() {
-		log.Info().Msg((fmt.Sprintln(r.Record())))
-	}
-	if err := r.Err(); err != nil {
-		log.Err(err)
-	}
+
+	log.Info().Msg(fmt.Sprintln(r))
 }

@@ -19,11 +19,13 @@ type Payload struct {
 
 // get token
 func GenToken(data interface{}) (string, error) {
+	timeNow := time.Now()
 	cla := Payload{
 		data,
 		jwt.StandardClaims{
-			ExpiresAt: time.Now().Add(TokenExpireDuration).Unix(), // 过期时间
-			Issuer:    "lx-jwt",                                   // 签发人
+			ExpiresAt: timeNow.Add(TokenExpireDuration).Unix(), // 过期时间
+			NotBefore: timeNow.Unix(),
+			IssuedAt:  timeNow.Unix(),
 		},
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, cla)

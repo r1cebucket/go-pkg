@@ -1,6 +1,0 @@
-{"level":"info","time":"2023-04-07T17:37:57+08:00","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJEYXRhIjoiaGVsbG8iLCJleHAiOjE2ODA4Njc0NzcsImlzcyI6Imx4LWp3dCJ9.uv57GsrHHEzYiX_Evq2qftMp-9q1xNPf2PB5qLgt0QM"}
-{"level":"error","error":"signature is invalid","time":"2023-04-07T17:37:57+08:00","message":"failed to parse token"}
-{"level":"info","time":"2023-04-07T17:38:08+08:00","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJEYXRhIjoiaGVsbG8iLCJleHAiOjE2ODA4Njc0ODgsImlzcyI6Imx4LWp3dCJ9.SG5mxtHC44y-GslX4Q3Wx7C3_JBVLE6jc_2J9zfNuXo"}
-{"level":"info","time":"2023-04-07T17:38:08+08:00","message":"string"}
-{"level":"info","time":"2023-04-07T17:38:42+08:00","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJEYXRhIjoiaGVsbG8iLCJleHAiOjE2ODA4Njc1MjIsImlzcyI6Imx4LWp3dCJ9.Csu8VwxpqnUbJGpv9SqoE6EYAV-z6-sDTTuLhyb_XTQ"}
-{"level":"info","time":"2023-04-07T17:38:42+08:00","message":"string"}

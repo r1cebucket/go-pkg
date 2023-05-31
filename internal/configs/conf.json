@@ -22,5 +22,11 @@
     },
     "kafka":{
         "servers":["localhost:9092"]
+    },
+    "influxdb":{
+        "token": "TZtU9ljQhlzf-OGlBY423YGoK_I1zP3ljdQAXpvTyCe8Bv8qExDKF9lhMgamN-VcOjPljaSpvHX32_S4O2Dueg==",
+        "url": "http://localhost:8086",
+        "org": "test",
+        "bucket": "dev"
     }
 }

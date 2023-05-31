@@ -24,6 +24,13 @@ type database struct {
 	TimeZone string `json:"timezone" toml:"timezone"`
 }
 
+type influxdb struct {
+	Token  string `json:"token" toml:"token"`
+	URL    string `json:"url" toml:"url"`
+	Org    string `json:"org" toml:"org"`
+	Bucket string `json:"bucket" toml:"bucket"`
+}
+
 type redis struct {
 	Host     string `json:"host" toml:"host"`
 	Port     string `json:"port" toml:"port"`
@@ -47,6 +54,7 @@ type kafka struct {
 type configure struct {
 	Logger     logger     `json:"logger" toml:"logger"`
 	Database   database   `json:"database" toml:"database"`
+	Influxdb   influxdb   `json:"influxdb" toml:"influxdb"`
 	Redis      redis      `json:"redis" toml:"redis"`
 	Email      email      `json:"email" toml:"email"`
 	HTTPServer httpServer `json:"http" toml:"http"`
@@ -59,6 +67,7 @@ var conf configure
 // use pointer to save space
 var Logger *logger
 var Database *database
+var Influxdb *influxdb
 var Redis *redis
 var Email *email
 var HTTPServer *httpServer
@@ -112,8 +121,9 @@ func parseToml(confPath string) {
 }
 
 func register() {
-	Database = &conf.Database
 	Logger = &conf.Logger
+	Database = &conf.Database
+	Influxdb = &conf.Influxdb
 	Redis = &conf.Redis
 	HTTPServer = &conf.HTTPServer
 	Kafka = &conf.Kafka

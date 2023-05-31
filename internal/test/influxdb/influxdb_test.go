@@ -28,7 +28,7 @@ func TestWrite(t *testing.T) {
 			"device_num": i,
 		}
 
-		err := influxdb.WriteData(writeAPI, "project_devices", tags, fields)
+		err := influxdb.Write(writeAPI, "project_devices", tags, fields)
 		if err != nil {
 			t.Errorf("%s\n", err.Error())
 		}

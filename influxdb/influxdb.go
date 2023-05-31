@@ -23,7 +23,7 @@ func GetWriteAPI() api.WriteAPIBlocking {
 	return writeAPI
 }
 
-func WriteData(writeAPI api.WriteAPIBlocking, measurement string, tags map[string]string,
+func Write(writeAPI api.WriteAPIBlocking, measurement string, tags map[string]string,
 	fields map[string]interface{}) error {
 	point := write.NewPoint(measurement, tags, fields, time.Now())
 

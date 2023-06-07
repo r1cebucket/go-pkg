@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 
-	_ "github.com/bmizerany/pq" // driver
+	_ "github.com/lib/pq" // driver
 	"github.com/r1cebucket/gopkg/config"
 	"github.com/r1cebucket/gopkg/log"
 	"github.com/r1cebucket/gopkg/utils"
@@ -28,11 +28,12 @@ func Setup() {
 		config.Database.Host, config.Database.Port, config.Database.User, config.Database.Password, config.Database.DBName, config.Database.TimeZone)
 
 	conn, err := sql.Open(driverName, source)
-	sqlDB = conn
-	sqlDB.SetMaxOpenConns(1000)
 	if err != nil {
 		log.Fatal().Msg("Cannot open postgres DB: " + err.Error())
+		return
 	}
+	sqlDB = conn
+	sqlDB.SetMaxOpenConns(1000)
 	err = sqlDB.Ping()
 	if err != nil {
 		log.Fatal().Msg("Cannot connect to postgres DB: " + err.Error())

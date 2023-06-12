@@ -8,7 +8,7 @@
         "port": "5432",
         "user": "postgres",
         "password": "ricebucket",
-        "dbname": "test",
+        "dbname": "fileserver",
         "timezone": "Asia/Shanghai"
     },
     "redis": {

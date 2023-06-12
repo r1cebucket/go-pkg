@@ -24,7 +24,7 @@ func Session() *gorm.DB {
 }
 
 // setup engin of gorm
-func SetupSession() error {
+func SetupSession() {
 	dsn := fmt.Sprintf(
 		"host=%s port=%s user=%s password=%s dbname=%s sslmode=disable TimeZone=%s",
 		config.Database.Host, config.Database.Port, config.Database.User, config.Database.Password, config.Database.DBName, config.Database.TimeZone,
@@ -46,7 +46,7 @@ func SetupSession() error {
 	)
 	if err != nil {
 		zerolog.Fatal().Msg("Could not open database")
-		return err
+		return
 	}
 	db = session
 
@@ -57,5 +57,4 @@ func SetupSession() error {
 	// sqlDB.SetMaxIdleConns(10)
 	// sqlDB.SetMaxOpenConns(100)
 	// sqlDB.SetConnMaxLifetime(time.Hour)
-	return nil
 }
